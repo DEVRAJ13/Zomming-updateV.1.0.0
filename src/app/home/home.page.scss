@@ -1,1 +1,68 @@
+:host /deep/.swiper-slide img {
+    width: 100% !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
+:host /deep/ .swiper-pagination-bullet-active {
+    background: var( --ion-color-danger);
+}
+
+:host /deep/ .swiper-pagination-bullet {
+    width: 20px !important;
+    height: 5px !important;
+    display: inline-block !important;
+    border-radius: 25% !important;
+}
+
+:host /deep/  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 35px !important;
+    left: 0;
+    width: 100%;
+    position: relative !important;
+}
+
+.loader{
+    text-align: center;
+    display: block;
+    margin: auto;
+    height: 38px;
+    margin-top: 25px;
+}
+
+.thumnails{
+    overflow-x: scroll;
+    overflow-y: hidden;
+  
+}
+
+.list-thumbnail{
+    height: 100%;
+    white-space: nowrap;
+   
+  
+}
+
+.selected-img{
+    border: 2px;
+}
+
+.img-thumb{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0px;
+    width: 105px;
+    height: 145px;
+    margin: 0 2px 0 0;
+    line-height: 65px;
+    margin-right: 7px;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.custom-padding{
+    padding-left: 10px;
+}

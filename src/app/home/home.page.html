@@ -1,12 +1,40 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+<ion-content>
+  <ion-grid  *ngIf="loaderPen" style="height: 100%">
+      <ion-row justify-content-center align-items-center style="height: 100%">
+        <div>
+            <img class="loader" src="./../../assets/loader.gif" />
+        </div>
+      </ion-row>
+    </ion-grid>
+
+
+  <ion-slides *ngIf="fiveItemsOnly && fiveItemsOnly.length" style="height:32vh;" pager="true" loop="true" speed="300">
+    <ion-slide *ngFor="let slide of fiveItemsOnly">
+      <img src="http://image.tmdb.org/t/p/w500/{{slide.backdrop_path}}" />
+    </ion-slide>
+  </ion-slides>
+
+  <h6 *ngIf="titlePen" text-uppercase class="custom-padding">Upcoming Movies</h6>
+  <div class="thumnails">
+    <div class="list-thumbnail">
+      <div class="img-thumb" *ngFor="let now of nowplaying_list">
+        <img class="thumbnail-img" src="http://image.tmdb.org/t/p/w500/{{now.poster_path}}">
+      </div>
+    </div>
+  </div>
+
+  <!-- <ion-button color="danger" (click)="goToSlide()">Play</ion-button> -->
+
+  <!-- <ion-button shape="round" color="danger" (click)="presentToast()">Save</ion-button>
+  <br>
+  <ion-button color="danger" (click)="navigationBtn()">Go to </ion-button> -->
+
 </ion-content>
