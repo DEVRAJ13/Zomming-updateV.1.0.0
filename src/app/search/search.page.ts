@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { Platform, Searchbar, ModalController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
@@ -11,10 +11,9 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
 export class SearchPage implements OnInit {
   @ViewChild("searchbar") searchbar:Searchbar;
   bgcolor: string;
+  name: string;
 
-  constructor(private statusBar: StatusBar, private platform: Platform,public modalController: ModalController, private speechRecognition: SpeechRecognition) {
-
-  }
+  constructor(private statusBar: StatusBar, private zone: NgZone, private platform: Platform,public modalController: ModalController, private speechRecognition: SpeechRecognition) {}
 
   async ngOnInit() {
     this.speechRecognition.hasPermission()
@@ -51,7 +50,10 @@ export class SearchPage implements OnInit {
   }
 
   async showText(text) {
-    this.bgcolor = text;
+    this.zone.run(() => {
+      this.bgcolor = text;
+  });
+    
   }
 
   ionViewWillEnter() {

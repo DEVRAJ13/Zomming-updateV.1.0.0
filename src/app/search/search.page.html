@@ -4,7 +4,7 @@
           <ion-back-button defaultHref="home"></ion-back-button>
         </ion-buttons>
 
-        <ion-searchbar #searchbar></ion-searchbar>
+        <ion-searchbar #searchbar [(ngModel)]="bgcolor"></ion-searchbar>
 
         <ion-buttons slot="end" (click)="start()">
             <ion-icon class="size-ic" name="mic"></ion-icon>
@@ -14,8 +14,4 @@
 
 <ion-content padding>
 
-
-
-
-<h6>{{bgcolor}}</h6>
 </ion-content>
