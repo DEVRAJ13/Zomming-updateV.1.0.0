@@ -5,6 +5,7 @@
     left: 0;
 }
 
+
 :host /deep/ .swiper-pagination-bullet-active {
     background: var( --ion-color-danger);
 }
@@ -29,6 +30,12 @@
     margin: auto;
     height: 38px;
     margin-top: 25px;
+}
+
+.thumbnail-img-two{
+    height: 65px;
+    border-radius: 5px;
+    width: 100px;
 }
 
 .thumnails{
@@ -59,6 +66,29 @@
     line-height: 65px;
     margin-right: 7px;
 }
+
+.img-thumb-top{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0px;
+    width: 65px;
+    height: 65px;
+    margin: 0 0px 0 0;
+    margin-right: 7px;
+}
+
+.size-ic{
+    font-size: 25px;
+    margin-right: 16px;
+}
+
+.size-ic-end{
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -66,3 +96,6 @@
 .custom-padding{
     padding-left: 10px;
 }
+
+
+

@@ -1,0 +1,19 @@
+:host /deep/ .searchbar-input.sc-ion-searchbar-md {
+   -webkit-box-shadow: none !important;
+     box-shadow:none !important;
+}
+
+:host /deep/ ion-icon.searchbar-search-icon.sc-ion-searchbar-md.hydrated {
+    display: none !important;
+}
+
+:host /deep/ .searchbar-input.sc-ion-searchbar-md {
+    padding: 6px 0px !important;
+    background: var(--ion-color-light);
+}
+
+.size-ic{
+    font-size: 22px;
+    margin-right: 16px;
+}
+

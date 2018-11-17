@@ -3,24 +3,34 @@
     <ion-title>
       Home
     </ion-title>
+    <ion-buttons slot="end" (click)="searchResult()">
+      <ion-icon class="size-ic" name="search"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid  *ngIf="loaderPen" style="height: 100%">
-      <ion-row justify-content-center align-items-center style="height: 100%">
-        <div>
-            <img class="loader" src="./../../assets/loader.gif" />
-        </div>
-      </ion-row>
-    </ion-grid>
-
+  <ion-grid *ngIf="loaderPen" style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <div>
+        <img class="loader" src="./../../assets/loader.gif" />
+      </div>
+    </ion-row>
+  </ion-grid>
 
   <ion-slides *ngIf="fiveItemsOnly && fiveItemsOnly.length" style="height:32vh;" pager="true" loop="true" speed="300">
     <ion-slide *ngFor="let slide of fiveItemsOnly">
-      <img src="http://image.tmdb.org/t/p/w500/{{slide.backdrop_path}}" />
+      <img src="http://image.tmdb.org/t/p/w500/{{slide.backdrop_path}}"/>
     </ion-slide>
   </ion-slides>
+
+  <div class="thumnails" style="margin-top: 16px;">
+    <div class="list-thumbnail">
+      <div class="img-thumb-top" *ngFor="let now of nowplaying_list">
+        <img class="thumbnail-img-two" src="http://image.tmdb.org/t/p/w500/{{now.poster_path}}">
+      </div>
+    </div>
+  </div>
 
   <h6 *ngIf="titlePen" text-uppercase class="custom-padding">Upcoming Movies</h6>
   <div class="thumnails">
@@ -30,11 +40,5 @@
       </div>
     </div>
   </div>
-
-  <!-- <ion-button color="danger" (click)="goToSlide()">Play</ion-button> -->
-
-  <!-- <ion-button shape="round" color="danger" (click)="presentToast()">Save</ion-button>
-  <br>
-  <ion-button color="danger" (click)="navigationBtn()">Go to </ion-button> -->
-
+  
 </ion-content>
